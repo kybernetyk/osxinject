@@ -1,0 +1,25 @@
+This is an example of DLL-Injection on OS X. It's 
+the equivalent to LD_PRELOADing on BSD/Linux.
+
+1. run build.sh
+2. run run.sh
+
+If you examine the files you will see that the
+testbinary is not linked with "inject.dylib".
+
+We only set the DYLD_INSERT_LIBRARIES env variable
+to let dyld preload our library before executing
+anything.
+
+If you perform the exports into your terminal
+you will see that our injected code is executed
+for any binary you run within that terminal session.
+
+This might come handy if you try to inject your code
+into a remote process. (Building plugins for applications
+that don't support extensions. Or writing a cheat/trainer
+for a game.)
+
+Read more about DLL injection on Wikipedia:
+  http://en.wikipedia.org/wiki/DLL_injection
+
